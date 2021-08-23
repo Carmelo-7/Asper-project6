@@ -23,10 +23,23 @@ nav{
 }
 
 
-img{width: 240px;height: 238px;}
+#hero img{width: 240px;height: 238px;}
 
 
 
+#gallery div{
+    margin:4rem 0 ;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(5,1fr);
+    grid-template-areas:
+    'img1 img2 img3'
+    'img4 img2 img5'
+    'img4 img6 img5'
+    'img7 img6 img8'
+    'img7 img9 img8';
+   gap:1rem;
+}
 
 .custom-shape-divider-top-1629628280 {
     position: absolute;
@@ -68,13 +81,6 @@ img{width: 240px;height: 238px;}
   .Card h4,h5{text-align:center;font-weight: 300 !important;}
 
   h5{opacity:0.6;font-size: 1rem !important;}
-
-  .icon-wrap{
-    border-radius:50%;
-    padding:1rem;
-   
-    
-  }
   
   .Card1 .icon-wrap{
     background:red;
@@ -94,7 +100,60 @@ img{width: 240px;height: 238px;}
     
   }
 
+  #contact{
+    position: relative;
+    background-color: aliceblue;
+    padding-top: 10rem !important;
+  }
 
+  .custom-shape-divider-top-1629699790 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    fill: white;
+}
 
+.contact-card{
+  padding:2rem 7rem;
+  display:flex;
+  gap:1rem;
+  flex-direction:column;
+  align-items:center;
+  max-width:33vw;
+  margin: 5rem 0;
+  background-color: white;
+  box-shadow: 0 0 50px rgb(128, 128, 128,0.2);
 
+}
 
+.contact-card1 .icon-wrap{
+  background:#f76400;
+}
+
+.contact-card2 .icon-wrap{
+  background:#00ac69;
+}
+.icon-wrap{
+  border-radius:50%;
+  padding:1rem;
+ 
+  
+}
+
+.custom-shape-divider-top-1629708740 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  fill: aliceblue;
+}
+
+.footer{
+  position: relative;
+  padding-top: 8rem;
+}
