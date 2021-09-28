@@ -1,17 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+
+@font-face {
+  font-family: Metropolis;
+  src: url(Metropolis-Regular.otf);
+}
+@font-face {
+  font-family:Metropolis-bold ;
+  src: url(./metropolis.bold.otf);
+}
+
 *{
     margin: 0 ;
     padding: 0 ;
     box-sizing: border-box;
-    font-family:'Roboto','Helvetica Neue', 'Lato','Nunito','Montserrat','Open sans',sans-serif;
+    font-family:Metropolis,sans-serif;
     
 }
 body{
     width: 100%;
 }
+
 .container-fluid{position: relative; padding: 0 !important;}
+
 nav{
     padding:2rem 6rem ;
+}
+
+.navbar-brand{
+  font-family: Metropolis-bold;
 }
 
 .nav-item{margin: 0 1rem;}
@@ -27,18 +43,47 @@ nav{
 
 
 
-#gallery div{
-    margin:4rem 0 ;
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    grid-template-rows: repeat(5,1fr);
-    grid-template-areas:
-    'img1 img2 img3'
-    'img4 img2 img5'
-    'img4 img6 img5'
-    'img7 img6 img8'
-    'img7 img9 img8';
-   gap:1rem;
+.card{
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  min-width: 100% !important;
+  box-shadow: 0 .15rem 1.75rem 0 rgba(33,40,50,.15);
+  position: relative;
+  transition: all 1s ease;
+  /* max-width: 33% !important; */
+}
+
+.card-body{
+  display: none;
+}
+.card h6{
+  font-family: Metropolis-bold;
+  font-size: 0.75rem;
+}
+
+/* ----------------CARD OVERLAY-------------- */
+.card-overlay{
+  position: absolute;
+  inset: 0;
+  background-color: transparent;
+  place-items: center;
+  display: grid;
+  transition: all 300ms ease-in;
+
+}
+.card-overlay h6{
+  opacity: 0;
+  transition: all 300ms ease-in;
+}
+
+.card:hover .card-overlay{
+
+  background-color: rgba(0, 0, 255,0.8);
+
+}
+
+.card:hover .card-overlay>h6{
+  opacity: 1;
 }
 
 .custom-shape-divider-top-1629628280 {
@@ -94,10 +139,16 @@ nav{
     background:blue;
   }
   
+  .icon-wrap{
+    height: 4rem;
+    width: 4rem;
+    display: grid;
+    place-items: center;
+    padding: 0.5rem;
+  }
   .icon-wrap i{
     color:white;
-   font-size:1rem;
-    
+   font-size:1.5rem;
   }
 
   #contact{
@@ -156,4 +207,33 @@ nav{
 .footer{
   position: relative;
   padding-top: 8rem;
+}
+
+/* <---------------Media Queries--------------> */
+
+@media screen and (max-width:768px) {
+
+  .gallery-cards .row{
+     min-width: 100% !important;
+     padding: 1.5rem !important;
+  }
+
+  .card-body{
+    display: block;
+  }
+  
+  .card-overlay{
+    display: none;
+  }
+
+  .Card{
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width:410px) {
+  nav{
+    padding-left: 3rem ;
+    padding-right: 3rem ;
+  }
 }
